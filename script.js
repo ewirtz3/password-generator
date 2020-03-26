@@ -9,6 +9,7 @@ function writePassword() {
   passwordText.value = password;
 
 }
+//var passwordLength = prompt: password length 8-128 characters; if password length <8 or >128 characters, alert 'Please enter a number between 8 and 128'
 var passwordLength = prompt('Please specify a password length between 8 and 128 characters.') {
   var pwdLength = parseInt(passwordLength)
   if (passwordLength < 8 || passwordLength > 128) {
@@ -16,17 +17,20 @@ var passwordLength = prompt('Please specify a password length between 8 and 128 
   }
 }
 
+//var lowerCase = confirm: include lowercase characters?
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var num = '0123456789';
 var specialChar = '!@#$%^&*()+';
+var lower = confirm('Should the password include lower case letters?')
 var upperCase = confirm('Should the password include upper case letters?');
 var number = confirm('Should the password include numbers?');
 var special = confirm('Should the password include special characters?')
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword) {
-  var characters = lowerCase;
+  var characters = '';
+  (lowerCase.true) ? characters += lower;
   (upperCase.true) ? characters += upper : '';
   (number.true) ? characters += num : '';
   (special.true) ? characters += specialChar : '';
@@ -34,8 +38,8 @@ generateBtn.addEventListener("click", writePassword) {
 }
 
 
-//var passwordLength = prompt: password length 8-128 characters; if password length <8 or >128 characters, alert 'Please enter a number between 8 and 128'
-//var lowerCase = confirm: include lowercase characters? 
+
+ 
 //var upperCase = confirm: include uppercase characters?
 //var number = confirm: include numbers?
 //var special = confirm: include special characters?
