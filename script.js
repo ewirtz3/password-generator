@@ -3,15 +3,15 @@ var generateBtn = document.querySelector("#generate");
 
 //var passwordLength = prompt: password length 8-128 characters; if password length <8 or >128 characters, alert 'Please enter a number between 8 and 128'
 var passwordLength = prompt('Please specify a password length between 8 and 128 characters.');
-
 var pwdLength = parseInt(passwordLength);
+//console.log to confirm pwdLength
+console.log(pwdLength);
 
-while (pwdLength < 8 || pwdLength > 128) {
+while (pwdLength < 8 && !null || pwdLength > 128 && !null) {
   alert('Please enter a number between 8 and 128.');
   passwordLength = prompt ('Please specify a password length between 8 and 128 characters.');
-  pwdLength = parseInt(passwordLength);
+  // pwdLength = parseInt(passwordLength);
 }
-
 
 //define arrays, do I need new var names? lowerCase = [a-z]; upperCase = [A-Z], number = [0-9]; special = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+']
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
@@ -26,11 +26,9 @@ var upper = confirm('Should the password include upper case letters?');
 var number = confirm('Should the password include numbers?');
 //var special = confirm: include special characters?
 var special = confirm('Should the password include special characters?');
+ 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword) 
-
-//add selected arrays 
+//add selected arrays to characters array
 var characters = [];
 lower ? characters.push(...lowerCase) : '';
 upper ? characters.push(...upperCase) : '';
@@ -48,20 +46,17 @@ function generatePassword() {
   }
   return createdPassword;
 }
-// function checkPassword() {
-//   if (lower) {
-//     !createdPassword.includes(lowerCase) {generatePassword()};
-//   }
-// }
-
 
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-  
+
 }
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword)
 
 //if lowerCase = true && upperCase = false && number = false && special = false {return [a-z]*passwordLength;} 
 //else if lowerCase = true && upperCase = true && number = false && special = false {var lowerUpper = [a-z].concat([A-Z]); return lowerUpper * passwordLength;}
