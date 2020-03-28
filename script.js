@@ -34,19 +34,19 @@ lower ? characters.push(...lowerCase) : '';
 upper ? characters.push(...upperCase) : '';
 number ? characters.push(...num) : '';
 special ? characters.push(...specialChar) : '';
-//console.log full array
+//console.log full array, length of array, and value of pwdLength to confirm
 console.log(characters);
 console.log(characters.length);
 console.log(pwdLength);
 
 //what happens if the user selects a passwordLength that is shorter than the number of indices in the array defined by their choices?
-// while (characters.length < pwdLength) {
-//   alert('Number of character options is less than the length you specified.');
-//   var newPasswordLength = prompt('Please specify a new password length between 8 and ' + characters.length );
-//   var newPwdLength = parseInt(newPasswordLength);
-// }
-// //console.log to confirm new pwdLength;
-// console.log(newPwdLength);
+if (characters.length < pwdLength) {
+  alert('Number of character options is less than the length you specified.');
+  var newPasswordLength = prompt('Please specify a new password length between 8 and ' + characters.length );
+  var newPwdLength = parseInt(newPasswordLength);
+}
+//console.log to confirm new pwdLength;
+console.log(newPwdLength);
 
 
 function generatePassword() {
