@@ -1,20 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
 //var passwordLength = prompt: password length 8-128 characters; if password length <8 or >128 characters, alert 'Please enter a number between 8 and 128'
 var passwordLength = prompt('Please specify a password length between 8 and 128 characters.');
 
-var pwdLength = parseInt(passwordLength)
+var pwdLength = parseInt(passwordLength);
 
-while (pwdLength <= 8 || pwdLength >= 128) {
+while (pwdLength < 8 || pwdLength > 128) {
   alert('Please enter a number between 8 and 128.');
   passwordLength = prompt ('Please specify a password length between 8 and 128 characters.');
   pwdLength = parseInt(passwordLength);
@@ -38,16 +30,38 @@ var special = confirm('Should the password include special characters?');
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword) 
 
+//add selected arrays 
 var characters = [];
 lower ? characters.push(...lowerCase) : '';
 upper ? characters.push(...upperCase) : '';
 number ? characters.push(...num) : '';
 special ? characters.push(...specialChar) : '';
+//console.log full array
+console.log(characters);
 
-function generatePassword () {
-  for (i=0, i<characters.length, )
+
+function generatePassword() {
+  for (i=0; i<pwdLength.value; i++) {
+    var password = '';
+    var createdPassword = password + characters[Math.floor(Math.random()*characters.length)]
+    console.log(createdPassword);
+  }
+  return createdPassword;
 }
-passwordText.value = generatePassword(pwdLength.value, characters);
+// function checkPassword() {
+//   if (lower) {
+//     !createdPassword.includes(lowerCase) {generatePassword()};
+//   }
+// }
+
+
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+  
+}
 
 //if lowerCase = true && upperCase = false && number = false && special = false {return [a-z]*passwordLength;} 
 //else if lowerCase = true && upperCase = true && number = false && special = false {var lowerUpper = [a-z].concat([A-Z]); return lowerUpper * passwordLength;}
