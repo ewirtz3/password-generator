@@ -26,6 +26,7 @@ var upper = confirm('Should the password include upper case letters?');
 var number = confirm('Should the password include numbers?');
 //var special = confirm: include special characters?
 var special = confirm('Should the password include special characters?');
+var password = '';
  
 
 //add selected arrays to characters array
@@ -40,22 +41,21 @@ console.log(characters.length);
 console.log(pwdLength);
 
 //what happens if the user selects a passwordLength that is shorter than the number of indices in the array defined by their choices?
-if (characters.length < pwdLength) {
-  alert('Number of character options is less than the length you specified.');
-  var newPasswordLength = prompt('Please specify a new password length between 8 and ' + characters.length );
-  var newPwdLength = parseInt(newPasswordLength);
-}
-//console.log to confirm new pwdLength;
-console.log(newPwdLength);
-
+// if (characters.length < pwdLength) {
+//   alert('Number of character options is less than the length you specified.');
+//   var newPasswordLength = prompt('Please specify a new password length between 8 and ' + characters.length );
+//   var newPwdLength = parseInt(newPasswordLength);
+//   //console.log to confirm new pwdLength;
+//   console.log(newPwdLength);
+// }
 
 function generatePassword() {
-  for (i=0; i<pwdLength.value; i++) {
-    var password = '';
-    var createdPassword = password + characters[Math.floor(Math.random()*characters.length)]
+  for (i=0; i<pwdLength; i++) {
+    var createdPassword = password + characters[Math.floor(Math.random()*characters.length)];
     console.log(createdPassword);
+    //logs correctly but as individual objects, how to convert to one string? guessing unable to use JSON yet
   }
-  return createdPassword;
+  // return createdPassword;
 }
 
 function writePassword() {
