@@ -38,8 +38,9 @@ generateBtn.addEventListener("click", writePassword) {
   (upperCase.true) ? characters.push(...upper) : '';
   (number.true) ? characters.push(...num) : '';
   (special.true) ? characters.push(...specialChar) : '';
-  passwordText.value = password(pwdLength.value, characters);
 }
+
+passwordText.value = generatePassword(pwdLength.value, characters);
 
 //if lowerCase = true && upperCase = false && number = false && special = false {return [a-z]*passwordLength;} 
 //else if lowerCase = true && upperCase = true && number = false && special = false {var lowerUpper = [a-z].concat([A-Z]); return lowerUpper * passwordLength;}
