@@ -7,13 +7,13 @@ var pwdLength = parseInt(passwordLength);
 //console.log to confirm pwdLength
 console.log(pwdLength);
 
-while (pwdLength < 8 && !null || pwdLength > 128 && !null) {
+// while loop to confirm number is between 8 and 128 characters.
+while (pwdLength < 8 || pwdLength > 128) {
   alert('Please enter a number between 8 and 128.');
   passwordLength = prompt ('Please specify a password length between 8 and 128 characters.');
-  // pwdLength = parseInt(passwordLength);
 }
 
-//define arrays, do I need new var names? lowerCase = [a-z]; upperCase = [A-Z], number = [0-9]; special = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+']
+//define arrays: lowerCase = [a-z]; upperCase = [A-Z], number = [0-9]; special = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+']
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var num = '0123456789';
@@ -36,6 +36,17 @@ number ? characters.push(...num) : '';
 special ? characters.push(...specialChar) : '';
 //console.log full array
 console.log(characters);
+console.log(characters.length);
+console.log(pwdLength);
+
+//what happens if the user selects a passwordLength that is shorter than the number of indices in the array defined by their choices?
+// while (characters.length < pwdLength) {
+//   alert('Number of character options is less than the length you specified.');
+//   var newPasswordLength = prompt('Please specify a new password length between 8 and ' + characters.length );
+//   var newPwdLength = parseInt(newPasswordLength);
+// }
+// //console.log to confirm new pwdLength;
+// console.log(newPwdLength);
 
 
 function generatePassword() {
