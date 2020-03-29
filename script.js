@@ -51,19 +51,17 @@ console.log(pwdLength);
 
 function generatePassword() {
   for (i=0; i<pwdLength; i++) {
-    var createdPassword = password + characters[Math.floor(Math.random()*characters.length)];
+    var createdPassword = password += characters[(Math.floor(Math.random()
+    * characters.length))];
     console.log(createdPassword);
-    //logs correctly but as individual objects, how to convert to one string? guessing unable to use JSON yet
   }
-  // return createdPassword;
+  return createdPassword;
 }
 
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
