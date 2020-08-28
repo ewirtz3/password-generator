@@ -1,9 +1,31 @@
-# JavaScript Password Generator Homework
+# JavaScript Password Generator
 
-**Objective: Create a password generator that takes in the following user-selected criteria:**
-1. User selects length between 8 and 128 characters
-2. User selects if they want the password to include lower case letters, upper case letters, numbers, and/or special characters.
-3. Generator takes in user's selections to create a random password at the length specified.
-4. Generator then displays the password on the screen.
+## Description
 
-**Link to password generator:** https://ewirtz3.github.io/password-generator/ 
+This project focuses on using JavaScript to write a password generator. User clicks the Generate Password button, and answers a few alert prompts to select password length and type of character criteria. Based on these criteria, a password is generated for the user.
+
+**Link to password generator:** https://ewirtz3.github.io/password-generator/
+
+<img src="https://img.shields.io/github/last-commit/ewirtz3/password-generator?style=for-the-badge"/>
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+
+## Installation
+
+There are no steps for installation.
+
+## Usage
+
+1. Click on the link above to view the site.
+2. Click the Generate Password button
+3. Answer the alert prompts to confirm password length, and inclusion of lower case, upper case, numbers, and/or special characters.
+
+## License
+
+MIT License Copyright(c) 2020 Emily Wirtz
+
+If you have any questions, please contact me at GitHub username <a href="https://github.com/ewirtz3">ewirtz3</a>
